@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> RESULTS </title>
+</head>
+<style>
+body {
+	  background-image:
+	  url('f4993163a1654e1082b9ca77a38e271a.jpg');
+	  background-repeat: no-repeat;
+	  background-size: 100% 100%;
+	}
+.wrap{
+	margin-top: 20px;
+  margin-left :300px;
+  margin-right :100px;
+  margin-bottom:20px;
+}
+.venkat{
+  margin-top: 10px;
+  margin-left :650px;
+    margin-right :100px;
+  margin-bottom:20px;
+}
+
+.content{
+   margin-top: 10px;
+  margin-left :610px;
+    margin-right :400px;
+  margin-bottom:20px;
+}
+.sai{
+   margin-top: 100px;
+  margin-left :610px;
+    margin-right :400px;
+  margin-bottom:20px;
+}
+.hello{
+ margin-top: 200px;
+  margin-right :10px;
+  margin-bottom:100px;
+}
+</style>
+<body>
+	<div class="wrap"><h1> <strong> <a style="color : yellow">  MATURI VENKATA SUBBA RAO ENGINEERING COLLEGE </a></strong> </h1></div>
+	<div class ="venkat">
+	<img src="mvsr.jpg" alt="MVSR" width="150" height="100" margin : "auto">
+	</div>
+	<div class ="content"><h2> <a style="color : orange"> RESULTS WEBSITE </a></h2></div>
+	<div class="sai">
+	<form id ="form" method ="post">
+	<input type ="text" id="ROLLNO" placeholder="rollno"/>
+	<button type="button" onclick="callAPI(document.getElementById('ROLLNO').value)">SEARCH</button>
+	</form>
+	</div>
+	<div class ="hello"><h3> <a style="color : brown">CREATED BY:</a></h3>
+	<ul>
+	<li>  <a style="color : green"><em><strong> S.VIGNESH</em></strong></a> </li>
+	<li>  <a style="color : red"><em><strong> M.SAI VARUN</em></strong></a> </li>
+	<li>  <a style="color : blue"><em><strong> K.VENKAT SAI</em></strong></a> </li>
+	</div>
+</body>
+<script>
+var callAPI =(ROLLNO)=>{
+var myHeaders = new Headers();
+myHeaders.append("Content-Type","application/json");
+var raw = JSON.stringify({"ROLLNO":ROLLNO});
+var requestOptions={
+method :'POST',
+Headers: myHeaders,
+body : raw,
+redirect :'follow'
+};
+fetch( "https://peq2dg60de.execute-api.ap-northeast-1.amazonaws.com/dev",requestOptions)
+.then(response => response.text())
+.then(result => (document.write(JSON.parse(result).body)) )
+.catch(error => console.log('error',error));
+}
+</script>
+</html>

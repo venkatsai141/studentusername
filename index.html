@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validated Login Form</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="label"><img class="imge" src="icon.png">       Login</h1>
+		<form class="login_form" action="student results page.html" method="get" name="loginForm" onsubmit="return check(this.form)">
+			<div class="font">USERNAME</div>
+			<input type="text" size=45 name="userid">
+			<div class="font font2">Password</div>
+			<input type="password" name="pwd">
+			<button type="submit" onclick="return check(this.form)">Login</button>
+		</form>
+	</div>	
+	<script language="javascript">
+		function check(form)
+		{
+		if((form.userid.value == "2451-21-733-088" && form.pwd.value == "venkat") || (form.pwd.value == "varun" && form.userid.value == "2451-21-733-069")||(form.pwd.value == "vignesh" && form.userid.value == "2451-21-733-073")||(form.pwd.value == "deekshit" && form.userid.value == "2451-21-733-086")||(form.pwd.value == "srikara" && form.userid.value == "2451-21-733-100")||(form.pwd.value == "pradyumna" && form.userid.value == "2451-21-733-066")||(form.pwd.value == "siddarth" && form.userid.value == "2451-21-733-067"))
+		{
+			return true;
+		}
+		else
+		{
+			alert("Error Password or Username")
+			document.loginForm.pwd.focus();
+			return false;
+		}
+		}
+	</script>
+</body>
+</html>
